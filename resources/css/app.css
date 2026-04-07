@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-tiny {
+    font-size: 0.8125rem;
+    line-height: 1rem;
+  }
+}

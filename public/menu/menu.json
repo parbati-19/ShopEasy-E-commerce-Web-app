@@ -1,0 +1,43 @@
+{
+    "primaryMenu": [
+        {
+            "name": "Home",
+            "route": "#",
+            "menu_type": "link"
+        },
+        {
+            "name": "Shop",
+            "route": "shop",
+            "menu_type": "link"
+        },
+        {
+            "name": "Categories",
+            "route": "#",
+            "menu_type": "link"
+        }
+    ],
+    "secondaryMenu": [
+        {
+            "name": "Sign In",
+            "route": "login",
+            "menu_type": "link"
+        },
+        {
+            "name": "Register",
+            "route": "register",
+            "menu_type": "link"
+        }
+    ],
+    "footerMenu": [
+        {
+            "name": "Home",
+            "route": "#",
+            "menu_type": "link"
+        },
+        {
+            "name": "Shop",
+            "route": "shop",
+            "menu_type": "link"
+        }
+    ]
+}

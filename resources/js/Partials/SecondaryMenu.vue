@@ -1,13 +1,18 @@
 <script setup>
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 import { Link, usePage } from "@inertiajs/vue3";
+import AccountDropdown from "./AccountDropdown.vue";
 
 const page = usePage();
 const primaryMenus = page.props.menu?.secondaryMenu || [];
+const auth = page.props.auth || null;
+const app = page.props.app || null;
 </script>
 
 <template>
-    <div class="sticky top-0 z-50 bg-orange-500 dark:bg-neutral-800 dark:border-b dark:border-neutral-700">
+    <div
+        class="sticky top-0 z-50 bg-orange-500 dark:bg-neutral-800 dark:border-b dark:border-neutral-700"
+    >
         <div class="flex items-center px-4 sm:px-6 lg:px-16 py-1">
             <!-- LEFT: Logo -->
             <div>
@@ -39,15 +44,20 @@ const primaryMenus = page.props.menu?.secondaryMenu || [];
 
             <!-- RIGHT: Navigation -->
             <nav class="flex items-center gap-2">
-                <template v-for="(menu, index) in primaryMenus" :key="index">
-                    <Link
-                        v-if="menu && menu.menu_type === 'link'"
-                        :href="menu.route"
-                        class="px-2 py-2 rounded-md text-tiny text-white hover:text-black hover:bg-white dark:hover:text-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-700 transition"
-                    >
-                        {{ menu.name }}
-                    </Link>
-                </template>
+                <div v-if="auth?.user" class="flex items-center gap-2">
+                    <AccountDropdown :authUser="auth?.user" :app="app?.name" />
+                </div>
+                <div v-else>
+                    <template v-for="(menu, index) in primaryMenus" :key="index">
+                        <Link
+                            v-if="menu && menu.menu_type === 'link'"
+                            :href="menu.route"
+                            class="px-2 py-2 rounded-md text-tiny text-white hover:text-black hover:bg-white dark:hover:text-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-700 transition"
+                        >
+                            {{ menu.name }}
+                        </Link>
+                    </template>
+                </div>
             </nav>
         </div>
     </div>

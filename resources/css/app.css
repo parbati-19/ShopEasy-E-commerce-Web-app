@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where(.dark, .dark *));
 @layer utilities {
   .text-tiny {
     font-size: 0.8125rem;

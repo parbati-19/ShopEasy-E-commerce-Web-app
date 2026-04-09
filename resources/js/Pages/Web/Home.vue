@@ -57,7 +57,7 @@ const props = defineProps({
         </div>
 
         <!-- Featured Products Section -->
-        <div class="bg-gray-50 py-16">
+        <div class="bg-gray-50 dark:bg-neutral-800 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-3xl font-bold">Featured Products</h2>

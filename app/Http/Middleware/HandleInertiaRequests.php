@@ -34,6 +34,9 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'app' => [
+                'name' => config('app.name'),
+            ],
             'menu' => [
                 'primaryMenu' => config('menu.primary_menu'),
                 'secondaryMenu' => config('menu.secondary_menu'),
